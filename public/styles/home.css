@@ -28,7 +28,7 @@ body {
 }
 
 .navBar .links {   
-    margin: auto 0   
+    margin: auto 0;   
 }
 
 .navBar .links a {    
@@ -113,10 +113,9 @@ body {
 
 .footer {
     width: 100%;
-    height: 68px;
-    margin: 0;
+    height: 68px;    
     background: #EEEEEE;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .footer p {
@@ -125,4 +124,30 @@ body {
     text-align: center;
     color: #999999;
     padding: 23px 0;
+}
+
+/* Página SOBRE */
+
+.about_container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111111;
+    margin-top: 20px;
+    margin-bottom: 20px;    
+}
+
+.about_container p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #444444;
+    line-height: 28px;
+    margin-bottom: 30px;
+    text-align: justify;        
+}
+
+.about_container h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #111111;
+    margin-bottom: 20px;       
 }
