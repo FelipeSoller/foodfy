@@ -4,77 +4,14 @@
 
 <div class="cards_recipes">
     <div class="grid_recipes">
-        <div class="card_recipe" id="burger">
-            <img src="/assets/burger.png" alt="burger">
-            <h2 class="card_name">Triplo Bacon Burger</h2>
-            <p class="made_by">Por Jorge Relato</p>
-        </div>
 
-        <div class="card_recipe" id="pizza">
-            <img src="/assets/pizza.png" alt="pizza">
-            <h2 class="card_name">Pizza 4 estações</h2>
-            <p class="made_by">Por Fabiana Melo</p>
+        {% for item in items %}
+        <div class="card_recipe" id="{{ item.id }}">
+            <img src="{{ item.image }}" alt="imagem de {{ item.id }}">
+            <h2 class="card_name">{{ item.title }}</h2>
+            <p class="made_by">{{ item.author }}</p>
         </div>
-
-        <div class="card_recipe" id="espaguete">
-            <img src="/assets/espaguete.png" alt="espaguete">
-            <h2 class="card_name">Espaguete ao alho</h2>
-            <p class="made_by">Por Julio Kinoto</p>
-        </div>
-
-        <div class="card_recipe" id="lasanha">
-            <img src="/assets/lasanha.png" alt="lasanha">
-            <h2 class="card_name">Lasagna Mac n' Cheese</h2>
-            <p class="made_by">Por Juliano Vieira</p>
-        </div>
-
-        <div class="card_recipe" id="doce">
-            <img src="/assets/doce.png" alt="docinhos">
-            <h2 class="card_name">Docinhos Pão-do-céu</h2>
-            <p class="made_by">Por Ricardo Gouvêa</p>
-        </div>
-
-        <div class="card_recipe" id="asinhas">
-            <img src="/assets/asinhas.png" alt="frango">
-            <h2 class="card_name">Asinhas de Frango ao Barbecue</h2>
-            <p class="made_by">Por Sonia Steroski</p>
-        </div>
-
-        <div class="card_recipe" id="burger">
-            <img src="/assets/burger.png" alt="burger">
-            <h2 class="card_name">Triplo Bacon Burger</h2>
-            <p class="made_by">Por Jorge Relato</p>
-        </div>
-
-        <div class="card_recipe" id="pizza">
-            <img src="/assets/pizza.png" alt="pizza">
-            <h2 class="card_name">Pizza 4 estações</h2>
-            <p class="made_by">Por Fabiana Melo</p>
-        </div>
-
-        <div class="card_recipe" id="espaguete">
-            <img src="/assets/espaguete.png" alt="espaguete">
-            <h2 class="card_name">Espaguete ao alho</h2>
-            <p class="made_by">Por Julio Kinoto</p>
-        </div>
-
-        <div class="card_recipe" id="lasanha">
-            <img src="/assets/lasanha.png" alt="lasanha">
-            <h2 class="card_name">Lasagna Mac n' Cheese</h2>
-            <p class="made_by">Por Juliano Vieira</p>
-        </div>
-
-        <div class="card_recipe" id="doce">
-            <img src="/assets/doce.png" alt="docinhos">
-            <h2 class="card_name">Docinhos Pão-do-céu</h2>
-            <p class="made_by">Por Ricardo Gouvêa</p>
-        </div>
-
-        <div class="card_recipe" id="asinhas">
-            <img src="/assets/asinhas.png" alt="frango">
-            <h2 class="card_name">Asinhas de Frango ao Barbecue</h2>
-            <p class="made_by">Por Sonia Steroski</p>
-        </div>
+        {% endfor %}        
     </div>
 </div>
 

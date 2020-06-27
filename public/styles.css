@@ -90,6 +90,7 @@ body {
 .card_recipe {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }   
 
 .card_recipe img {
