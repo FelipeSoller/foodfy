@@ -1,0 +1,26 @@
+{
+  "name": "foodfy",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r   <img width=\"30%\" src=\"https://github.com/FelipeSoller/foodfy/blob/master/LaunchBaseLogo.png\" alt=\"Logo LaunchBase\">\r </p>",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelipeSoller/foodfy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FelipeSoller/foodfy/issues"
+  },
+  "homepage": "https://github.com/FelipeSoller/foodfy#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
