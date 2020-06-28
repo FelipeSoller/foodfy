@@ -62,7 +62,7 @@ As aulas foram ministradas pelo mestre **[Mayk Brito](https://github.com/maykbri
 
 ## :memo: Licença
 
-
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/FelipeSoller/foodfy/blob/master/LICENSE) para mais detalhes.
 
 ---
 
