@@ -153,70 +153,6 @@ body {
     margin-bottom: 20px;       
 }
 
-/* MODAL */
-
-/* .modal_overlay {
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.modal {
-    background-color: white;    
-    width: 660px;
-    height: 415px;
-    border-radius: 16px;
-    margin: auto;
-    position: relative;
-    top: 20%;
-}
-
-.modal img {
-    border-radius: 15px;
-    width: 600px;
-    height: 200px;
-    object-fit: cover;
-    margin: 30px 30px 20px 30px;
-}
-
-#nome_receita {
-    font-size: 24px;;
-    color: #111111;
-    text-align: center;
-    margin-bottom: 5px;
-}
-
-#chef_receita {
-    font-size: 18px;
-    line-height: 28px;
-    color: #777777;
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.close_modal {
-    font-size: 16px;
-    color: #999999;
-    text-align: center;
-    margin: 0 auto;
-}
-
-.close_modal p {
-    cursor: pointer;   
-} */
-
-/* MODAL.ACTIVE */
-
-/* .modal_overlay.active {
-    opacity: 1;
-    visibility: visible;
-} */ 
-
 /* Página Receita */
 
 .recipes__detail-section .details ul{
@@ -291,3 +227,116 @@ body {
     overflow: hidden;
  }
 
+ /* Página Admin Listagem */
+
+ .admin_cards_recipes h1 {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 24px;
+    color: #111111;  
+    margin-bottom: 30px;
+}
+
+.admin_grid_recipes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.admin_card_recipe {
+    display: flex;
+    flex-direction: row;   
+}   
+
+.admin_card_recipe img {
+    width: 172px;
+    height: 82px;
+    border-radius: 8.5px;
+    margin-bottom: 20px;    
+}
+
+.admin_details {
+    margin-left: 20px;
+}
+
+.admin_card_recipe h2 {
+    font-size: 18px;
+    color: #111111;
+    margin-bottom: 5px;
+}
+
+.admin_card_recipe p {
+    font-size: 14px;
+    color: #777777;
+    margin-bottom: 10px;
+}
+
+.admin_card_recipe a {
+    font-size: 14px;
+    color: #6558C3;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Página Admin Create */
+
+.container .header_create {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.container .header_create h1 {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 24px;
+    
+}
+
+.container .header_create button[type="submit"] {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 9px 20px;    
+    background: #6558C3;
+    border: none;
+    border-radius: 4px;    
+}
+
+.item {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 16px;
+    color: #111111;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    height: 49px;
+    margin: 10px 0 30px 0;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;   
+}
+
+.item button[type="submit"] {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 16px;
+    color: #6558C3;
+    text-align: right;
+    border: none;
+    background: white;
+    margin-bottom: 30px;
+}
+
+.item #additional_information {
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    width: 940px;
+    height: 257px;
+    margin-top: 10px;
+}

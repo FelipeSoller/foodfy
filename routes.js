@@ -15,6 +15,14 @@ routes.get("/receitas", function(req, res) {
     return res.render("recipes/index", { items: recipes })
 })
 
+routes.get("/admin/recipes", function(req, res) {
+    return res.render("admin/index", { items: recipes })
+})
+
+routes.get("/admin/recipes/create", function(req, res) {
+    return res.render("admin/create")
+})
+
 routes.get("/receitas/:index", (req, res) => {
     const recipeIndex = req.params.index 
     const recipe = [...recipes]    
