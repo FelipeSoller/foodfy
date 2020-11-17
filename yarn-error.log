@@ -1,0 +1,62 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add browser-sync npm-rum-all -D
+
+PATH: 
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\FelipeSoller\bin;C:\Python38\Scripts;C:\Python38;C:\ProgramData\chocolatey\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\Users\FelipeSoller\AppData\Local\Microsoft\WindowsApps;C:\Users\FelipeSoller\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files (x86)\sqlite-tools-win32-x86-3320300;C:\Users\FelipeSoller\.dotnet\tools;C:\Users\FelipeSoller\AppData\Local\Microsoft\WindowsApps;C:\Program Files\heroku\bin;C:\Users\FelipeSoller\AppData\Roaming\npm;C:\Users\FelipeSoller\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  12.19.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/npm-rum-all: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66097:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140749:22)
+      at Request.emit (events.js:314:20)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141721:10)
+      at Request.emit (events.js:314:20)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141643:12)
+      at Object.onceWrapper (events.js:420:28)
+      at IncomingMessage.emit (events.js:326:22)
+      at endReadableNT (_stream_readable.js:1223:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+
+npm manifest: 
+  {
+    "name": "foodfy",
+    "version": "1.0.0",
+    "description": "<p align=\"center\">\r   <img width=\"30%\" src=\"https://github.com/FelipeSoller/foodfy/blob/master/LaunchBaseLogo.png\" alt=\"Logo LaunchBase\">\r </p>",
+    "main": "server.js",
+    "scripts": {
+      "start": "nodemon server.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/FelipeSoller/foodfy.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/FelipeSoller/foodfy/issues"
+    },
+    "homepage": "https://github.com/FelipeSoller/foodfy#readme",
+    "dependencies": {
+      "express": "^4.17.1",
+      "nunjucks": "^3.2.1"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
