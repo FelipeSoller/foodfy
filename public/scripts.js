@@ -27,26 +27,42 @@ for (let button of buttons) {
   })
 }
 
+// Add new ingredients
+function addIngredient() {
+  const ingredients = document.querySelector("#ingredients");
+  const fieldContainer = document.querySelectorAll(".ingredient");
 
+  // Realiza um clone do último ingrediente adicionado
+  const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
 
-// const modalOverlay = document.querySelector('.modal_overlay');
-// const cards = document.querySelectorAll('.card_recipe')
+  // Não adiciona um novo input se o último tem um valor vazio
+  if (newField.children[0].value == "") return false;
 
-// for (let card of cards) {
-//     card.addEventListener('click', function() {
-//         const imgRecipe = card.getAttribute('id') // Pega id da div .card_recipe
-//         const nameRecipe = card.querySelector('.card_name').textContent // Pega texto que está dentro do h2 .card_recipe
-//         const madeByRecipe = card.querySelector('.made_by').textContent // Pega texto que está dentro do p .made_by
-//         modalOverlay.classList.add('active'); // Adiciona a classe ACTIVE para abrir o modal
-//         modalOverlay.querySelector('img').src = `/assets/${imgRecipe}.png`; // Pega a imagem referente ao id - Nome da imagem deve ser o mesmo nome da ID
-//         modalOverlay.querySelector('#nome_receita').textContent = nameRecipe; // Insere o texto que foi pego dentro do h2
-//         modalOverlay.querySelector('#chef_receita').textContent = madeByRecipe; // Insere o texto que foi pego dentro do p
-//     })
-// }
+  // Deixa o valor do input vazio
+  newField.children[0].value = "";
+  ingredients.appendChild(newField);
+}
 
-// modalOverlay.querySelector('.close_modal').addEventListener('click', function() {
+document
+  .querySelector(".add-ingredient")
+  .addEventListener("click", addIngredient);
 
-//     modalOverlay.classList.remove('active');
-//     modalOverlay.querySelector('img').src = "";
+// Add new ingredients
+function addStep() {
+  const preparation = document.querySelector("#preparation");
+  const fieldContainer = document.querySelectorAll(".step");
 
-// })
+  // Realiza um clone do último ingrediente adicionado
+  const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+
+  // Não adiciona um novo input se o último tem um valor vazio
+  if (newField.children[0].value == "") return false;
+
+  // Deixa o valor do input vazio
+  newField.children[0].value = "";
+  preparation.appendChild(newField);
+}
+
+document
+  .querySelector(".add-step")
+  .addEventListener("click", addStep);

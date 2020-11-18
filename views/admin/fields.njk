@@ -11,26 +11,32 @@
 
 <div class="item">
     <div>Ingredientes</div>
-    <div>
-        <input 
-            type="text" 
-            name="ingredients"
-            value="{{recipe.ingredients}}"
-        >
-        <button type="submit">Adicionar Novo Ingrediente</button>
+    <div id="ingredients">
+        <div class="ingredient">
+            <input 
+                type="text" 
+                name="ingredients[]"
+                value="{{recipe.ingredients}}"
+            >
+            
+        </div>
     </div>
+    <button type="button" class="add-ingredient">Adicionar Novo Ingrediente</button>
 </div>
 
 <div class="item">
     <div>Modo de preparo</div>
-    <div>
-        <input 
-            type="text" 
-            name="preparation"
-            value="{{recipe.preparation}}"
-        >
-        <button type="submit">Adicionar Novo Passo</button>
+    <div id="preparation">
+        <div class="step">
+            <input 
+                type="text" 
+                name="preparation[]"
+                value="{{recipe.preparation}}"
+            >
+            
+        </div>
     </div>
+    <button type="button" class="add-step">Adicionar Novo Passo</button>
 
 </div>
 
@@ -41,3 +47,4 @@
         name="information"        
     >{{recipe.information}}</textarea>   
 </div>
+
