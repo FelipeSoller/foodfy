@@ -1,14 +1,22 @@
 <div class="item">
     <div>Imagem da Receita</div>
     <div>
-        <input type="text" name="recipe_image">
+        <input 
+            type="url" 
+            name="image" 
+            value="{{recipe.image}}"
+        >        
     </div>
 </div>
 
 <div class="item">
     <div>Ingredientes</div>
     <div>
-        <input type="text" name="recipe_ingredients">
+        <input 
+            type="text" 
+            name="ingredients"
+            value="{{recipe.ingredients}}"
+        >
         <button type="submit">Adicionar Novo Ingrediente</button>
     </div>
 </div>
@@ -16,7 +24,11 @@
 <div class="item">
     <div>Modo de preparo</div>
     <div>
-        <input type="text" name="preparation_mode">
+        <input 
+            type="text" 
+            name="preparation"
+            value="{{recipe.preparation}}"
+        >
         <button type="submit">Adicionar Novo Passo</button>
     </div>
 
@@ -24,5 +36,8 @@
 
 <div class="item">
     <div>Informações adicionais</div>   
-    <textarea id="additional_information" name="additional_information"></textarea>   
+    <textarea 
+        id="additional_information" 
+        name="information"        
+    >{{recipe.information}}</textarea>   
 </div>

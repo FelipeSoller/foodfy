@@ -280,28 +280,40 @@ body {
 
 /* Página Admin Create */
 
-.container .header_create {
+.header_create {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
 }
 
-.container .header_create h1 {
+.header_create h1 {
     font-family: Roboto;
     font-weight: bold;
     font-size: 24px;
     
 }
 
-.container .header_create button[type="submit"] {
+.header_create #edit-buttons {    
+    display: flex;    
+}
+
+.header_create a,
+.header_create button[type="submit"] {
     font-family: Roboto;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 16px;    
     color: #FFFFFF;
     padding: 9px 20px;    
     background: #6558C3;
     border: none;
-    border-radius: 4px;    
+    border-radius: 4px;   
+    text-decoration: none; 
+}
+
+.header_create button[type="submit"]#delete-button {
+    background: #DC4747;
+    width: 92px;
+    margin-right: 10px;
 }
 
 .item {
