@@ -227,7 +227,7 @@ body {
     overflow: hidden;
  }
 
- /* Página Admin Listagem */
+ /* Página Admin Recipes List */
 
  .admin_cards_recipes h1 {
     font-family: Roboto;
@@ -278,7 +278,7 @@ body {
     text-decoration: none;
 }
 
-/* Página Admin Create */
+/* Página Admin Recipe Create */
 
 .header_create {
     display: flex;
@@ -353,3 +353,126 @@ input {
     height: 257px;
     margin-top: 10px;
 }
+
+ /* Página Admin Chefs List */
+
+ .admin_cards_chefs h1 {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 24px;
+    color: #111111;  
+    margin-bottom: 30px;
+}
+
+.admin_grid_chefs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.admin_card_chef {
+    display: flex;
+    flex-direction: row;   
+}   
+
+.admin_card_chef img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;   
+}
+
+.admin_chef_details {
+    display: grid;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.admin_card_chef h2 {
+    font-size: 18px;
+    color: #111111;
+    
+}
+
+.admin_card_chef a {
+    font-size: 14px;
+    color: #6558C3;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Página Admin Chefs */
+
+.chef_banner__image-container img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;    
+    object-fit: cover;
+    margin: 0 auto 30px auto;     
+ }
+ 
+ .chef-info {    
+    text-align: center;
+ }
+ 
+ .chef-info h1 {    
+    font-size: 36px;
+    color: #111111;    
+    margin-bottom: 4px;
+ }
+ 
+ .chef-info p {
+    font-size: 20px;
+    color: #777777;
+    margin-bottom: 50px;
+ }
+
+ .chef_cards_recipes h1 {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 24px;
+    color: #111111;  
+    margin-bottom: 30px;
+}
+
+.chef_grid_recipes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.chef_card_recipe {
+    display: flex;
+    flex-direction: row;   
+}   
+
+.chef_card_recipe img {
+    width: 172px;
+    height: 82px;
+    border-radius: 8.5px;
+    margin-bottom: 20px;    
+}
+
+.chef_details {
+    margin-left: 20px;
+}
+
+.chef_card_recipe h2 {
+    font-size: 18px;
+    color: #111111;
+    margin-bottom: 5px;
+}
+
+.chef_card_recipe p {
+    font-size: 14px;
+    color: #777777;
+    margin-bottom: 10px;
+}
+
+.chef_card_recipe a {
+    font-size: 14px;
+    color: #6558C3;
+    font-weight: bold;
+    text-decoration: none;
+}
+ 
