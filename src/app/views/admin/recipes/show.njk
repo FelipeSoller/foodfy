@@ -60,7 +60,7 @@
                             <h3>Informações Adicionais</h3>                            
                         </div>
                         <div class="details">
-                            <p>{{recipe.information}}</p>
+                            <p>{{recipe.information | striptags(true) | escape | nl2br}}</p>
                         </div>
                     </div>
                 {% endif %}

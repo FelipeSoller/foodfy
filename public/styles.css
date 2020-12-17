@@ -326,15 +326,17 @@ body {
 }
 
 input {
-    width: 100%;
-    height: 49px;
+    width: 100%;   
+    padding: 20px 20px;
     margin: 10px 0 0 0;
     background: #FFFFFF;
     border: 1px solid #DDDDDD;
     border-radius: 4px;   
 }
 
-.item button[type="button"] {
+.item button[type="button"],
+.add-step,
+.add-ingredient {
     font-family: Roboto;
     font-weight: bold;
     font-size: 16px;
@@ -352,6 +354,11 @@ input {
     width: 940px;
     height: 257px;
     margin-top: 10px;
+}
+
+textarea {
+    font-family: Roboto;
+    padding: 20px 20px;
 }
 
  /* Página Admin Chefs List */
