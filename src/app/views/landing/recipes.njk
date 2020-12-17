@@ -1,0 +1,20 @@
+{% extends "layout.njk" %}
+
+{% block recipes %}
+
+<div class="cards_recipes">
+    <div class="grid_recipes">
+
+        {% for item in items %}
+        <div class="card_recipe" id="{{ item.id }}">
+            <img src="{{ item.image }}" alt="imagem de {{ item.id }}">
+            <h2 class="card_name">{{ item.title }}</h2>
+            <p class="made_by">{{ item.author }}</p>
+        </div>
+        {% endfor %}        
+    </div>
+</div>
+
+<script src="/scripts.js"></script>
+
+{% endblock %}
