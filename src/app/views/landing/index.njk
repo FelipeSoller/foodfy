@@ -17,11 +17,11 @@
     <h1>Mais Acessadas</h1>
     <div class="grid_recipes">
 
-        {% for item in items %}
+        {% for recipe in recipes %}
         <div class="card_recipe">
-            <img src="{{ item.image }}" alt="Imagem de {{ item.title }}">
-            <h2>{{ item.title }}</h2>
-            <p>{{ item.author }}</p>
+            <img src="{{ recipe.image }}" alt="Imagem de {{ recipe.title }}">
+            <h2>{{ recipe.title }}</h2>
+            <p>{{ recipe.chef_id }}</p>
         </div>
         {% endfor %}
 

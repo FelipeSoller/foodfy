@@ -2,26 +2,13 @@ const express = require('express');
 const routes = express.Router();
 const recipes = require('./app/controllers/recipes');
 const chefs = require('./app/controllers/chefs');
+const landingPages = require('./app/controllers/landingPages');
 
 // LANDING ROUTES
-routes.get("/", function(req, res) {
-    return res.render("landing/index", { items: data.recipes });
-});
-
-routes.get("/sobre", function(req, res) {
-    return res.render("landing/about");
-});
-
-routes.get("/receitas", function(req, res) {
-    return res.render("landing/recipes", { items: data.recipes });
-});
-
-routes.get("/receitas/:index", (req, res) => {
-    const recipeIndex = req.params.index;
-    const recipe = [...data.recipes];
-    
-    return res.render('landing/recipe', { recipe: recipe[recipeIndex - 1] });
-});
+routes.get("/", landingPages.index);
+routes.get("/sobre", landingPages.about);
+routes.get("/receitas", landingPages.recipeList);
+routes.get("/receitas/:id", landingPages.show);
 
 // ADMINS ROUTES
 routes.get("/admin/recipes", recipes.index)
