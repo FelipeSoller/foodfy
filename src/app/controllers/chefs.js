@@ -1,8 +1,11 @@
-const { age, date } = require('../../lib/utils');
+const Chef = require('../models/chef');
 
 module.exports = {
     index(req, res) {
-        return res.render("admin/chefs/chefsList");
+        
+         Chef.all(function (chefs) {
+            return res.render("admin/chefs/chefsList", { chefs });
+         });     
     },
     create(req, res) {
         return res.render("admin/chefs/create");
@@ -17,13 +20,23 @@ module.exports = {
             }
         }
 
-        return
+        Chef.create(req.body, function (chef) {
+            return res.redirect(`/admin/chefs/${chef.id}`);
+        });        
     },
     show(req, res) {
-        return
+        Chef.find(req.params.id, function (chef) {
+            if(!chef) return res.send("Chef not found!");           
+
+            return res.render("admin/chefs/show", { chef })
+        });
     },
     edit(req, res) {
-        return
+        Chef.find(req.params.id, function (chef) {
+            if(!chef) return res.send("Chef not found!");
+            
+            return res.render("admin/chefs/edit", { chef })
+        });
     },
     put(req, res) {
 
@@ -35,10 +48,13 @@ module.exports = {
             }
         }
 
-        return
+        Chef.update(req.body, function() {
+            return res.redirect(`/admin/chefs/${req.body.id}`);
+        })
     },
     delete(req, res) {
-        return
+        Chef.delete(req.body.id, function() {
+            return res.redirect(`/admin/chefs/`);
+        })
     }
 }
-
