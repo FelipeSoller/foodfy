@@ -5,7 +5,11 @@ module.exports = {
     all(callback) {
 
         db.query(`
-            SELECT * FROM chefs
+            SELECT chefs.*, count(recipes) AS total_recipes
+            FROM chefs
+            LEFT JOIN recipes ON (recipes.chef_id = chefs.id)
+            GROUP BY chefs.id
+            ORDER BY name ASC
         `, function(err, results) {
             if(err) throw `Database Error  ${err}`
 
@@ -38,12 +42,26 @@ module.exports = {
     find(id, callback) {
 
         db.query(`
-            SELECT * FROM chefs 
-            WHERE id = $1
+            SELECT chefs.*, count(recipes) AS total_recipes
+            FROM chefs
+            LEFT JOIN recipes ON (recipes.chef_id = chefs.id)
+            WHERE chefs.id = $1
+            GROUP BY chefs.id
         `, [id], function (err, results) {
             if(err) throw `Database Error  ${err}`
 
             callback(results.rows[0]);
+        });
+    },
+    findRecipe(chef_id, callback) {
+        db.query (`
+            SELECT recipes.* 
+            FROM recipes 
+            WHERE recipes.chef_id = $1
+        `, [chef_id.id], function (err, results) {
+            if (err) throw `Database error ${err}`
+            
+            callback(results.rows);
         });
     },
     update(data, callback) {
@@ -75,5 +93,5 @@ module.exports = {
 
             callback();
         });
-    }
+    }    
 }

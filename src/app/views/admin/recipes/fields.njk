@@ -12,11 +12,18 @@
 <div class="item">
     <div>Escolha um chefe</div>
     <div>
-        <input 
-            type="number" 
-            name="chef_id" 
-            value="{{recipe.chef_id}}"
-        >        
+        <select name="chef">
+            {% for chef in chefOptions %}
+                <option 
+                    value="{{chef.id}}"
+                    {% if recipe.chef_id == chef.id %}
+                        selected
+                    {% endif %}
+                >
+                    {{chef.name}}
+                </option>
+            {% endfor %} 
+        </select>             
     </div>
 </div>
 

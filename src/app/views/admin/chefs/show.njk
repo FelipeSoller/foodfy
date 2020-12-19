@@ -21,7 +21,7 @@
 
         <div class="chef-info">
             <h1>{{chef.name}}</h1>
-            <p>4 Receitas</p>
+            <p>{{chef.total_recipes}} Receitas</p>
         </div>
     </section>
 
@@ -30,15 +30,15 @@
             <h1>Gerenciar Receitas</h1>
             <div class="chef_grid_recipes">
 
-                {% for item in items %}
-                    <div class="chef_card_recipe" id="{{ item.id }}">
+                {% for recipe in recipes %}
+                    <div class="chef_card_recipe" id="{{ recipe.id }}">
                         <div>
-                            <img src="{{ item.image }}" alt="imagem de {{ item.id }}">
+                            <img src="{{ recipe.image }}" alt="imagem de {{ recipe.id }}">
                         </div>
                         <div class="chef_details">
-                            <h2>{{ item.title }}</h2>
-                            <p>{{ item.author }}</p>
-                            <a href="/admin/recipes/{{ item.id }}">Visualizar</a>
+                            <h2>{{ recipe.title }}</h2>
+                            <p>{{ chef.name }}</p>
+                            <a href="/admin/recipes/{{ recipe.id }}">Visualizar</a>
                         </div>
                     </div>
                 {% endfor %}
