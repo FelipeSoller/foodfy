@@ -6,9 +6,10 @@ const landingPages = require('./app/controllers/landingPages');
 
 // LANDING ROUTES
 routes.get("/", landingPages.index);
-routes.get("/sobre", landingPages.about);
-routes.get("/receitas", landingPages.recipeList);
-routes.get("/receitas/:id", landingPages.show);
+routes.get("/about", landingPages.about);
+routes.get("/recipes", landingPages.recipeList);
+routes.get("/chefs", landingPages.chefList);
+routes.get("/recipes/:id", landingPages.show);
 
 // ADMINS ROUTES
 routes.get("/admin/recipes", recipes.index)

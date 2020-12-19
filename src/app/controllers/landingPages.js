@@ -3,7 +3,7 @@ const LandingPage = require('../models/landingPage');
 module.exports = {
     index(req, res) {
         
-         LandingPage.all(function (recipes) {
+         LandingPage.allRecipes(function (recipes) {
             return res.render("landing/index", { recipes });
          });     
     },
@@ -12,8 +12,14 @@ module.exports = {
     },
     recipeList(req, res) {
 
-        LandingPage.all(function (recipes) {
+        LandingPage.allRecipes(function (recipes) {
             return res.render("landing/recipes", { recipes });
+         }); 
+    },
+    chefList(req, res) {
+
+        LandingPage.allChefs(function (chefs) {
+            return res.render("landing/chefs", { chefs });
          }); 
     },
     show(req, res) {
