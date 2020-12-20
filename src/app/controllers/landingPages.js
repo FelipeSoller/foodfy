@@ -2,19 +2,34 @@ const LandingPage = require('../models/landingPage');
 
 module.exports = {
     index(req, res) {
+        const { filter } = req.query;
+
+        if(filter) {
+            LandingPage.findBy(filter, function(recipes) {
+                return res.render("landing/index", { recipes, filter });
+            })
+        } else {
+            LandingPage.allRecipes(function (recipes) {
+               return res.render("landing/index", { recipes });
+            });
+        }
         
-         LandingPage.allRecipes(function (recipes) {
-            return res.render("landing/index", { recipes });
-         });     
     },
     about(req, res) {
         return res.render("landing/about");
     },
     recipeList(req, res) {
+        const { filter } = req.query;
 
-        LandingPage.allRecipes(function (recipes) {
-            return res.render("landing/recipes", { recipes });
-         }); 
+        if(filter) {
+            LandingPage.findBy(filter, function(recipes) {
+                return res.render("landing/recipes", { recipes });
+            })
+        } else {
+            LandingPage.allRecipes(function (recipes) {
+               return res.render("landing/recipes", { recipes });
+            });
+        }
     },
     chefList(req, res) {
 

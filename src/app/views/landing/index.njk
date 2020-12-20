@@ -14,8 +14,13 @@
                     <a href="/chefs">Chefes</a>                    
                 </div>
                 <div class="searchBar">
-                    <form action="/recipes" method="get">
-                        <input type="text" name="filter" placeholder="Procurar receita">
+                    <form action="/" method="get">
+                        <input 
+                            type="text" 
+                            name="filter" 
+                            placeholder="Chefe ou Receita"
+                            value={{filter}}
+                        >
                         <button type="submit" class="button">Buscar</button>
                     </form>
                 </div>
