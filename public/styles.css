@@ -24,9 +24,12 @@ html {
 .navBar {
     width: 940px;
     margin: 0 auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    align-items: center;
     padding: 36px 0 50px 0;    
 }
+
 
 .navBar .logo {
     padding-right: 124px;    
@@ -42,6 +45,44 @@ html {
     color: #111111;
     padding-right: 30px;    
 }
+
+/* FILTER */
+.navBar .filter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  
+    align-items: center;   
+}
+
+.navBar .filter .links {
+    margin: 0;
+}
+
+.navBar .filter .searchBar form {
+    display: grid;
+    grid-template-columns: 265px 90px;
+    justify-content: space-between;  
+    align-items: center;    
+}
+
+.navBar .filter .searchBar button {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 16px;    
+    color: #FFFFFF;
+    padding: 10px 20px;    
+    background: #6558C3;
+    border: none;
+    border-radius: 4px;   
+    text-decoration: none; 
+}
+
+.navBar .filter .searchBar input {   
+    box-sizing: border-box;
+    padding: 10px 20px; 
+    margin: 0 10px 0 0;
+}
+
+/* BANNER */
 
 .container_banner {
     background: #FBDFDB;
@@ -164,7 +205,7 @@ html {
     margin-bottom: 20px;       
 }
 
-/* Página Receita */
+/* Página Receitas */
 
 .recipes__detail-section .details ul{
     padding-left: 20px;

@@ -1,54 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles.css">
-    {% block head %}
-        <title>FoodFy</title>
-    {% endblock %}
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles.css">
+        {% block head %}
+            <title>FoodFy</title>
+        {% endblock %}
+    </head>
 
-<body>
-    <header>
-        <div class="navBar">
-            <div class="logo">
-                <a href="/"><img src="/assets/logo.png" alt=""></a>
-            </div>
-            <div class="links">
-                <a href="/about">Sobre</a>
-                <a href="/recipes">Receitas</a>
-                <a href="/chefs">Chefes</a>
-                <a href="/admin">Admin</a>
-            </div>
+    <body>
+        {% block header %}
+            <header>
+                <div class="navBar">
+                    <div class="logo">
+                        <a href="/"><img src="/assets/logo.png" alt=""></a>
+                    </div>
+                    <div class="links">
+                        <a href="/about">Sobre</a>
+                        <a href="/recipes">Receitas</a>
+                        <a href="/chefs">Chefes</a>                        
+                    </div>
+                </div>
+            </header>
+        {% endblock %}
+
+        <div class="container">
+
+            {# Landing Blocks #}
+            {% block banner %}{% endblock %}
+            {% block about %}{% endblock %}
+            {% block recipes %}{% endblock %}
+            {% block chefs %}{% endblock %}
+
+            {# Chefs Blocks #}
+            {% block chefsList %}{% endblock %}
+            {% block chefCreate %}{% endblock %}
+            {% block chefEdit %}{% endblock %}
+            {% block chefShow%}{% endblock %}
+
+            {# Recipes Blocks #}
+            {% block recipesList %}{% endblock %}
+            {% block recipeCreate %}{% endblock %}
+            {% block recipeEdit %}{% endblock %}
+            {% block recipeShow%}{% endblock %}
+
         </div>
-    </header>
-    <div class="container">
+        
+        <div class="footer">
+            <p>Todos os direitos reservados, receitas FoodFy</p>
+        </div>
 
-        {# Landing Blocks #}
-        {% block banner %}{% endblock %}
-        {% block about %}{% endblock %}
-        {% block recipes %}{% endblock %}
-        {% block chefs %}{% endblock %}
-
-        {# Chefs Blocks #}
-        {% block chefsList %}{% endblock %}
-        {% block chefCreate %}{% endblock %}
-        {% block chefEdit %}{% endblock %}
-        {% block chefShow%}{% endblock %}
-
-        {# Recipes Blocks #}
-        {% block recipesList %}{% endblock %}
-        {% block recipeCreate %}{% endblock %}
-        {% block recipeEdit %}{% endblock %}
-        {% block recipeShow%}{% endblock %}
-
-    </div>
-    <div class="footer">
-        <p>Todos os direitos reservados, receitas FoodFy</p>
-    </div>
-
-</body>
-
+    </body>
 </html>
