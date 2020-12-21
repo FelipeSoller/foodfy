@@ -47,6 +47,7 @@ html {
 }
 
 /* FILTER */
+
 .navBar .filter {
     display: grid;
     grid-template-columns: 1fr 1fr;  
@@ -175,7 +176,7 @@ html {
     padding: 23px 0;
 }
 
-/* Página SOBRE */
+/* ABOUT PAGE */
 
 .about_container {
     min-height: 100%;
@@ -205,7 +206,7 @@ html {
     margin-bottom: 20px;       
 }
 
-/* Página Receitas */
+/* RECIPES PAGE */
 
 .recipes__detail-section .details ul{
     padding-left: 20px;
@@ -272,14 +273,34 @@ html {
     margin-left: 8px;
  }
  
- /* Detalhes Colapso */
+ /* DETAILS COLLAPSE BUTTON */
  .hide-details {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
  }
 
- /* Página Admin Recipes List */
+ /* PAGINATION */
+
+ .pagination {
+     text-align: center;
+     margin-top: 10px;
+ }
+
+ .pagination a,
+ .pagination span {
+    font-size: 18px;
+    color: #6558C3;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 16px;
+ }
+
+ .pagination a:hover {
+     filter: brightness(0.3);
+ }
+
+ /* ADMIN RECIPE LIST PAGE */
 
  .admin_cards_recipes h1 {
     font-family: Roboto;
@@ -330,7 +351,7 @@ html {
     text-decoration: none;
 }
 
-/* Página Admin Recipe Create */
+/* ADMIN RECIPE CREATE PAGE */
 
 .header_create {
     display: flex;
@@ -413,7 +434,7 @@ textarea {
     padding: 20px 20px;
 }
 
- /* Página Admin Chefs List */
+ /* ADMIN CHEF LIST PAGE */
 
  .admin_cards_chefs h1 {
     font-family: Roboto;
@@ -466,7 +487,7 @@ textarea {
     text-decoration: none;
 }
 
-/* Página Admin Chefs */
+/* ADMIN CHEFS PAGE */
 
 .chef_banner__image-container img {
     display: block;
