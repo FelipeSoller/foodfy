@@ -395,17 +395,19 @@ html {
     font-size: 16px;
     color: #111111;
     margin-bottom: 10px;
-    margin-top: 30px;
+    margin-top: 30px;    
 }
 
-input, select {
-    width: 100%;   
+input, select { 
+    box-sizing: border-box;  
+    width: 100%;
     padding: 20px 20px;
     margin: 10px 0 0 0;
     background: #FFFFFF;
     border: 1px solid #DDDDDD;
     border-radius: 4px;   
 }
+
 
 .item button[type="button"],
 .add-step,
@@ -432,6 +434,7 @@ input, select {
 textarea {
     font-family: Roboto;
     padding: 20px 20px;
+    box-sizing: border-box;
 }
 
  /* ADMIN CHEF LIST PAGE */
