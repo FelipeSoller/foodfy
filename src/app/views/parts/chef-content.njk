@@ -1,0 +1,33 @@
+{% macro render(chef, session, admin) %}
+    <section class="selected container">
+        {% if admin %}
+            <div class="title">
+                <h2>Chef: {{chef.name}}</h2>
+                {% if session.isAdmin %}
+                    <a class="button" href="/admin/chefs/{{chef.id}}/edit">Editar chef</a>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <div class="chef-avatar">
+            <img src="{{chef.file.src}}" alt="imagem de {{chef.name}}">
+        </div>
+
+        <div class="title chef-title">
+            <h1>{{chef.name}}</h1>
+            <p> {{chef.total_recipes}} receitas</p>
+        </div>
+
+        <section class="admin" {% if chef.total_recipes == 0 %} style="display: none;" {% endif %}>
+            <div class="title">
+                <h2>Receitas</h2>
+            </div>
+
+            <div class="recipe-container">
+                {% for recipe in chef.recipes %}
+                    {% include "parts/recipe-card.njk" %}
+                {% endfor %}
+            </div>
+        </section>
+    </section>
+{% endmacro %}

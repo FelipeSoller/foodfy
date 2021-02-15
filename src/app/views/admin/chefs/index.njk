@@ -1,0 +1,21 @@
+{% extends 'parts/admin.njk' %}
+{% import "parts/chefs-list.njk" as section %}
+
+{% block head %}
+    <link rel="stylesheet" href="/styles/chefs-list.css">
+    <title>Gerenciar chefs | Foodfy</title>
+{% endblock %}
+
+{% block content %}
+    <section class="admin container">
+        <div class="title">
+            <h2>Gerenciar chefs</h2>
+            {% if session.isAdmin %}
+                <a class="button" href="/admin/chefs/create">Novo chef</a>
+            {% endif %}
+        </div>
+
+        {{ section.chefs("", chefs) }}
+    </section>
+    {% include "parts/pagination.njk" %}
+{% endblock %}

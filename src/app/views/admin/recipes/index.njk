@@ -1,0 +1,32 @@
+{% extends 'parts/admin.njk' %}
+
+{% block head %}
+    <link rel="stylesheet" href="/styles/recipes-list.css">
+    <title>Gerenciar receitas | Foodfy</title>
+{% endblock %}
+
+{% block content %}
+    <section class="admin container">
+        <div class="title">
+            <h2>Gerenciar receitas</h2>
+            <a class="button" href="/admin/recipes/create">Nova receita</a>
+        </div>
+
+        <div class="recipe-container">
+
+            {% for recipe in recipes %}
+                <div class="recipe">
+                    <img src="{{recipe.image}}" alt="imagem de {{recipe.title}}">
+                    <div>
+                        <h3>{{recipe.title}}</h3>
+                        <p>por {{recipe.chef_name}}</p>
+                        <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </section>
+    
+    {% include "parts/pagination.njk" %}
+{% endblock %}

@@ -1,27 +1,71 @@
-module.exports = {
-    age(timestamp) {
-        const today = new Date();
-        const birthDate = new Date(timestamp);
-    
-        let age = today.getFullYear() - birthDate.getFullYear();
-        const month = today.getMonth() - birthDate.getMonth();
-    
-        if (month < 0 || month == 0 && today.getDate() < birthDate.getDate()) {
-            age = age - 1;
-        }
-    
-        return age
-    },
-    date(timestamp) {
-        const date = new Date(timestamp);
-        const year = date.getUTCFullYear();
-        const month = `0${date.getUTCMonth() + 1}`.slice(-2);
-        const day = `0${date.getUTCDate()}`.slice(-2);        
+const Recipe = require("../app/models/Recipe");
 
-        return {            
-            iso: `${year}-${month}-${day}`,
-            birthDay: `${day}/${month}`,
-            format: `${day}/${month}/${year}`
+module.exports = {
+    emailTemplate(content) {
+        return `
+        <body style="margin:0; padding:0; color:#444;">
+            <table width="100%" align="center" cellpadding="0" cellspacing="0" style="max-width:600px;">               
+                <tr>
+                    <td style="padding:20px;">
+                        <table width="100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td style="padding:30px 0;">
+                                    ${content}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="padding:15px 10px 15px 10px;" bgcolor="#eee">
+                        <table width="100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="480" style="color:#999;" align="center">Todos direitos reservados, receitas Foodfy</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </body>
+        `;
+    },
+    async getImages(recipeId) {
+        let files = await Recipe.files(recipeId)
+
+        files = files.map(file => ({
+            ...file,
+            src: `${file.path.replace('public', '')}`
+        }))
+
+        return files
+    },
+    getParams(query, limit){
+        let { search, page } = query
+
+        page = page || 1;
+        let offset = limit * (page - 1)
+
+        const params = {
+            search,
+            limit,
+            offset,
+            page
         };
+
+        return params
+    },
+    checkAllFields(body) {
+        const keys = Object.keys(body)
+    
+        for (let key of keys) {
+            if (body[key] == '' & key != 'removed_files') {
+                
+                return {
+                    user: body,
+                    error: 'Por favor, preencha todos os campos!'
+                }
+            }
+        }
     }
-}
+};

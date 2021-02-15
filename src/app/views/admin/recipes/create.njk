@@ -1,64 +1,28 @@
-{% extends "layout.njk" %}
+{% extends 'parts/admin.njk' %}
 
-{% block recipeCreate %}
+{% block head %}
+    <link rel="stylesheet" href="/styles/admin-forms.css">
+    <title>Criar Receita | Foodfy</title>
+{% endblock %}
 
-  <form method="post" action="/admin/recipes">
-    <div class="header_create">
-      <h1>Criando Receitas</h1>
-      <button type="submit">Salvar receita</button>
-    </div>
-    <div class="form_create">
-      {% include "admin/recipes/fields.njk" %}
-    </div>
+{% block content %}
+    <section class="container">
+        <form action="/admin/recipes" method="POST" enctype="multipart/form-data">
+            <div class="title">
+                <h2>Nova receita</h2>
+                <div>
+                    <a href="/admin/recipes" class="button cancel">Cancelar</a>
+                    <button 
+                        class="button" 
+                        type="submit" 
+                        onclick="Validate.allFields(event)"
+                    >Salvar receita
+                    </button>
+                </div>
+            </div>
 
-  </form>
-
-  <script>
-    // Add new ingredients
-    function addIngredient() {
-      const ingredients = document.querySelector("#ingredients");
-      const fieldContainer = document.querySelectorAll(".ingredient");
-
-      // Realiza um clone do último ingrediente adicionado
-      const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
-
-      // Não adiciona um novo input se o último tem um valor vazio
-      if (newField.children[0].value == "") 
-        return false;
-      
-      // Deixa o valor do input vazio
-      newField
-        .children[0]
-        .value = "";
-      ingredients.appendChild(newField);
-    }
-
-    document
-      .querySelector(".add-ingredient")
-      .addEventListener("click", addIngredient);
-
-    // Add new ingredients
-    function addStep() {
-      const preparation = document.querySelector("#preparation");
-      const fieldContainer = document.querySelectorAll(".step");
-
-      // Realiza um clone do último ingrediente adicionado
-      const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
-
-      // Não adiciona um novo input se o último tem um valor vazio
-      if (newField.children[0].value == "") 
-        return false;
-      
-      // Deixa o valor do input vazio
-      newField
-        .children[0]
-        .value = "";
-      preparation.appendChild(newField);
-    }
-
-    document
-      .querySelector(".add-step")
-      .addEventListener("click", addStep);
-  </script>
-
+            {% include "parts/recipes-fields.njk" %}
+        </form>
+    </section>
+    
 {% endblock %}

@@ -1,0 +1,15 @@
+{% extends "parts/main.njk" %}
+{% import "parts/recipe-content.njk" as recipeContent %}
+
+{% block head %}
+    <link rel="stylesheet" href="/styles/recipe-index.css">
+    <title>{{recipe.title}} | Foodfy</title>
+{% endblock %}
+
+{% block search %}
+    {% include "parts/searchBar.njk" %}
+{% endblock %}
+
+{% block content %}
+    {{ recipeContent.render(recipe, "hide") }}
+{% endblock %}

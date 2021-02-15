@@ -1,0 +1,12 @@
+{% extends "parts/main.njk" %}
+{% import "parts/chef-content.njk" as chefContent %}
+
+{% block head %}
+    <link rel="stylesheet" href="/styles/chef-profile.css">
+    <link rel="stylesheet" href="/styles/recipes-list.css">
+    <title>{{chef.name}} | Foodfy</title>
+{% endblock %}
+
+{% block content %}
+    {{ chefContent.render(chef) }}
+{% endblock %}

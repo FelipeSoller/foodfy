@@ -1,0 +1,145 @@
+<div class="item">
+    <div>Imagens da receita (até 05 fotos)</div>
+    <div id="photos-container">
+        <div id="photos-upload">
+            <input
+                id="photos-input"
+                type="file"
+                name="photos"
+                multiple
+                accept="image/*"
+                {% if not recipe.files %} required {% endif %}
+                onchange="PhotosUpload.handleFileInput(event, 5)"
+            >
+            <i class="material-icons">add</i>
+        </div>
+
+        <div id="photos-preview">
+            {% if recipe.files %}
+                {% for image in recipe.files%}
+                    <div class="photo" id="{{image.file_id}}">
+                        <img src="{{image.src}}" alt="{{image.name}}">
+                        <i
+                            class="material-icons"
+                            onclick="PhotosUpload.removeOldPhoto(event)"
+                        >close</i>
+                    </div>
+                {% endfor %}
+                
+                <input type="hidden" name="removed_files">
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="item">
+    <div>Nome da receita</div>
+    <div>
+        <input
+            type="text"
+            name="title"
+            value="{{recipe.title}}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Chef</div>
+    <div>
+        <select name="chef">
+            <option disabled selected value>Selecione um chef</option>
+            {% for chef in chefsOptions %}
+                <option
+                    value="{{chef.id}}"
+                    {% if recipe.chef_id == chef.id %}
+                        selected="selected"
+                    {% endif %}
+                >{{chef.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+
+<div class="item" id="ingredients">
+    <div>Igredientes</div>
+    {% for ingredient in recipe.ingredients %}
+        <div class="ingredients">
+            <input
+                type="text"
+                name="ingredients[]"
+                value="{{ingredient}}"
+            >
+        </div>
+    {% else %}
+        <div class="ingredients">
+            <input
+                type="text"
+                name="ingredients[]"
+            >
+        </div>
+    {% endfor %}
+</div>
+
+<div class="options">
+    <a class="add-ingredient add"><i class="material-icons">add</i>Adicionar</a>
+    <a class="remove-ingredient remove"><i class="material-icons">delete</i>Remover</a>
+</div>
+
+<div class="item" id="step">
+    <div>Modo de preparo</div>
+    {% for preparation in recipe.preparation %}
+        <div class="steps">
+            <input
+                type="text"
+                name="preparation[]"
+                value="{{preparation}}"
+            >
+        </div>
+    {% else %}
+        <div class="steps">
+            <input
+                type="text"
+                name="preparation[]"
+            >
+        </div>
+    {% endfor %}
+</div>
+
+<div class="options">
+    <a class="add-step add"><i class="material-icons">add</i>Adicionar</a>
+    <a class="remove-step remove"><i class="material-icons">delete</i>Remover</a>
+</div>
+
+<div class="item">
+    <div>informações adicionais</div>
+    <div>
+        <textarea name="information">{{recipe.information}}</textarea>
+    </div>
+</div>
+
+<script>
+    const addIngredient = document.querySelector('.add-ingredient');
+    const addStep = document.querySelector('.add-step');
+    const removeIngredient = document.querySelector('.remove-ingredient');
+    const removeStep = document.querySelector('.remove-step');
+    function addField(id, container) {
+        const fieldId = document.querySelector(id);
+        const fieldContainer = document.querySelectorAll(container);
+        const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+        if (newField.children[0].value == '') return false;
+        newField
+            .children[0]
+            .value = '';
+        fieldId.appendChild(newField);
+    }
+    function removerField(container) {
+        const fieldContainer = document.querySelectorAll(container);
+        const lastField = fieldContainer[fieldContainer.length -1];
+        if (fieldContainer.length - 1 == 0) return false;
+        lastField.remove();
+    }
+    addIngredient.addEventListener('click', () => addField('#ingredients', '.ingredients'));
+    addStep.addEventListener('click', () => addField('#step', '.steps'));
+    removeIngredient.addEventListener('click', () => removerField('.ingredients'));
+    removeStep.addEventListener('click', () => removerField('.steps'));
+</script>

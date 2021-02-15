@@ -1,0 +1,20 @@
+.about {
+    margin: auto;
+}
+
+.about h1 {
+    font-size: 24px;
+}
+
+.about h2 {
+    margin-top: 32px;
+    font-size: 20px;
+}
+
+.about p {
+    margin: 20px 0;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: justify;
+    color: darkgrey;
+}

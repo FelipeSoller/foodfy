@@ -1,0 +1,34 @@
+.users-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 52px;
+    margin-top: 72px
+}
+
+.users-container .user h3 {
+    font-size: 18px;
+}
+
+.users-container .user p {
+    margin-top: 4px;
+    font-size: 14px;
+    color: grey;
+}
+
+.user .options {
+    display: flex;
+    margin-top: 16px;
+}
+
+.user .options a {
+    margin-right: 16px;
+    font-weight: bold;
+    color: #6558C3;
+}
+
+.user .options button {
+    font-weight: bold;
+    color: #dc4747;
+    background-color: transparent;
+    cursor: pointer;
+}

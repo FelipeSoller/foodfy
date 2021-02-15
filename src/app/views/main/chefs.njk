@@ -1,0 +1,14 @@
+{% extends "parts/main.njk" %}
+{% import "parts/chefs-list.njk" as section %}
+
+{% block head %}
+    <link rel="stylesheet" href="/styles/chefs-list.css">
+    <title>Chefs | Foodfy</title>
+{% endblock %}
+
+{% block content %}
+    <section class="container list">
+        {{ section.chefs("total_recipes", chefs) }}
+    </section>
+    {% include "parts/pagination.njk" %}
+{% endblock %}

@@ -1,0 +1,95 @@
+header.header-admin {
+    background-color: black;
+}
+
+header.header-admin .container {
+    grid-template-columns: 92px 1fr;
+    gap: 50px;
+}
+
+.header-admin .links {
+    width: 100%;
+}
+
+.header-admin .links ul {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.header-admin .links ul .links-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 25px;
+    justify-content: start;
+}
+
+.header-admin .links ul div:last-of-type {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-admin .links a.active,
+.header-admin .links p {
+    color: white;
+}
+
+.header-admin .links a,
+.header-admin .links button {
+    text-transform: uppercase;
+    color: lightgray;
+}
+
+.header-admin .links a:hover,
+.header-admin .links button:hover {
+    color: white;
+}
+
+.header-admin .links p {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: .5px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #5449a3;
+    border-radius: 16px;
+}
+
+.header-admin .links form {
+    text-align: center;
+}
+
+.header-admin .links button {
+    text-transform: uppercase;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header-admin .links .user-menu {
+    position: relative;
+    justify-self: end;
+}
+
+.header-admin .links .user-menu .submenu {
+    position: absolute;
+    top: 32px;
+    left: -4px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-bottom: 15px;
+    width: 100px;
+    text-align: center;
+    background-color: black;
+    border-radius: 4px;
+    transition: all .2s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.header-admin .links .user-menu:hover .submenu {
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+}

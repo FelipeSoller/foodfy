@@ -1,0 +1,56 @@
+header .links a:hover {
+    font-weight: bold;
+}
+header .container .filter-form {
+    display: grid;
+    grid-template-columns: 248px auto;
+    justify-self: end;
+}
+
+header .container .filter-form input {
+    margin: 0;
+}
+
+header .container .filter-form button {
+    min-width: 96px;
+}
+
+section.banner {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding-top: 60px;
+    max-height: 366px;
+    background-color: #fbdfdb;
+    border-radius: 30px;
+}
+
+.banner-content {
+    padding: 60px;
+}
+
+.banner-content h1 {
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.banner-content p {
+    max-width: 316px;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+section.most-popular {
+    margin-top: 40px;
+    margin-bottom: auto;
+}
+
+footer {
+    background-color: #eee;
+}
+
+footer p {
+    margin: 0;
+    padding: 23px;
+    text-align: center;
+    color: lightgray;
+}

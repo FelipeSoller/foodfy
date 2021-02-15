@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: black;
+    list-style: none;
+    border: none;
+    outline: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: overlay;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 940px;
+}
+
+.list {
+    margin-bottom: auto;
+}
+
+header .container {
+    display: grid;
+    grid-template-columns: 92px 1fr 1fr;
+    align-items: center;
+    padding: 24px 0;
+    min-height: 88px;
+}
+
+header .links{
+    justify-self: center;
+}
+
+header .links ul {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 32px;
+}
+
+header .links a {
+    position: relative;
+    font-size: 16px;
+    transition: .2s;
+}
+
+.links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    opacity: 0;
+    border-radius: 10px;
+    transition: all .2s ease;
+}
+
+.links a:hover::after {
+    opacity: 1;
+    bottom: -6px;
+}
+
+.active {
+    font-weight: bold;
+}
+
+.selected {
+    margin-bottom: 56px;
+}
+
+.selected h2 {
+    margin: 20px 0;
+}
+
+.selected .title {
+    text-align: center;
+}
+
+.selected .title h1 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 36px;
+}
+
+.selected .title p {
+    margin: 0;
+    font-size: 20px;
+    color: gray;
+}
+
+.admin > .title,
+form .title,
+.selected > .title:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: 100%; 
+    line-height: 1.15; 
+    margin: 0; 
+}
+
+form input,
+form textarea,
+form select {
+    margin-top: 10px;
+    padding: 8px 24px;
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form input[type="checkbox"] {
+    margin-right: 8px;
+    width: initial;
+    height: initial;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    box-shadow: 0px 0px 2px #ccc;
+}
+
+.button {
+    display: inline-block;
+    margin-left: 16px;
+    padding: 8px 20px;
+    min-width: 140px;
+    height: 40px;
+    line-height: 26px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #6558C3;
+    border-radius: 4px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #4d4491;
+}
+
+.button.cancel {
+    background-color: gray;
+}
+
+.button.cancel:hover {
+    background-color: darkgray;
+}
+
+button.button-delete {
+    background-color: #dc4747;
+}
+
+button.button-delete:hover {
+    background-color: #b63c3c;
+}
+
+.item .error {
+    padding: 4px 8px;
+    margin-top: 5px;
+    text-align: center;
+    color: white;
+    background-color: #dc4747;
+    border-radius: 4px;
+}
+
+.messages {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    width: 344px;
+    height: 135px;
+    color: #fff;
+    border-radius: 4px;
+    opacity: 1;
+    animation: hidemessage .4s 5s ease-out forwards;
+}
+
+.messages.error {
+    background-color: #dc4747;
+}
+
+.messages.success {
+    background-color: green;
+}
+
+@keyframes hidemessage {
+    to {
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.pagination {
+    margin: auto 0 32px;
+    text-align: center;
+}
+
+.pagination a {
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 2px solid #6558C3;
+}
+
+.pagination a,
+.pagination span {
+    margin-right: 16px;
+    transition: .2s;
+}
+
+.pagination a.active {
+    background-color: #6558C3;
+    color: white;
+}
+
+.pagination a:hover {
+    color: white;
+    background-color: #6558C3;
+}

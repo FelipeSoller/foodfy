@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <link rel="stylesheet" href="/styles/main-index.css">
+        {% include "parts/head-content.njk" %}
+
+        {% block head %}
+            <title>Foodfy</title>
+        {% endblock %}
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                {% include "parts/links-main.njk" %}
+
+                {% block search%}
+                {% endblock %}
+            </div>
+        </header>
+
+        {% include "parts/messages.njk" %}
+
+        {% block content %}
+        {% endblock %}
+
+        <footer>
+            <p>&reg;Foodfy - Todos os direitos reservados.</p>
+        </footer>
+
+        <script src="/scripts/index.js"></script>
+        <script src="/scripts/redirect.js"></script>
+        <script src="/scripts/pagination.js"></script>
+        <script src="/scripts/showRecipeContent.js"></script>
+    </body>
+</html>

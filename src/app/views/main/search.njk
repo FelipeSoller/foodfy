@@ -1,0 +1,24 @@
+{% extends "parts/main.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/styles/recipes-list.css">
+    <title>Buscando por "{{search}}" | Foodfy</title>
+{% endblock %}
+
+{% block search %}
+    {% include "parts/searchBar.njk" %}
+{% endblock %}
+
+{% block content %}
+    <section class="container list">
+        <h2>Buscando por "{{search}}"</h2>
+        
+        <div class="recipe-container">
+            {% for recipe in recipes %}
+                {% include "parts/recipe-card.njk" %}
+            {% endfor %}
+        </div>
+        
+        {% include "parts/pagination.njk" %}
+    </section>
+{% endblock %}

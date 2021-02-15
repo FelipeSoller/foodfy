@@ -1,0 +1,36 @@
+{% extends "parts/main.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/styles/recipes-list.css">
+    <title>Foodfy - As melhores receitas</title>
+{% endblock %}
+
+{% block search %}
+    {% include "parts/searchBar.njk" %}
+{% endblock %}
+
+{% block content %}
+    <section class="banner container">
+        <div class="banner-content">
+            <h1>As melhores receitas</h1>
+            <p>
+                Aprenda a construir os melhores pratos com
+                receitas criadas por profissionais do mundo inteiro.
+            </p>
+        </div>
+
+        <div class="banner-img">
+            <img src="assets/chef.png" alt="chef">
+        </div>
+    </section>
+
+    <section class="most-popular container">
+        <h2>Mais acessadas</h2>
+
+        <div class="recipe-container">
+            {% for recipe in recipes %}
+                {% include "parts/recipe-card.njk" %}
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

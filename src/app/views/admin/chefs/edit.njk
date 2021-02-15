@@ -1,37 +1,41 @@
-{% extends "layout.njk" %}
+{% extends 'parts/admin.njk' %}
 
-{% block chefEdit %}
+{% block head %}
+    <link rel="stylesheet" href="/styles/admin-forms.css">
+    <title>Editar Chef | Foodfy</title>
+{% endblock %}
 
-<div class="header_create">
-    <h1>Editando Receita</h1>
-    <div id="edit-buttons">
-        <button id="delete-button" form="form-delete" type="submit">Delete</button>
-        <button form="form-edit" type="submit">Salvar Chefe</button>
-    </div>
-</div>
+{% block content %}
+    <section class="container">
+        <form action="/admin/chefs?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div class="title">
+                <h2>Editar chef</h2>
 
-<form id="form-edit" method="post" action="/admin/chefs?_method=PUT">
-    
-    <div class="form_create">
-        {% include "admin/chefs/fields.njk" %}
-    </div>
+                <div>
+                    <button 
+                        class="button button-delete" 
+                        type="submit" 
+                        form="form-delete"
+                    >Deletar
+                    </button>
+                    <button 
+                        class="button" 
+                        type="submit" 
+                        onclick="Validate.allFields(event)"
+                    >Salvar chef
+                    </button>
+                </div>
+            </div>
 
-    <input 
-        type="hidden" 
-        name="id" 
-        value={{ chef.id }}
-    >
+            {% include "parts/chefs-fields.njk" %}
 
-</form>
+            <input type="hidden" name="id" value={{chef.id}}>
+        </form>
 
-<form id="form-delete" method="post" action="/admin/chefs?_method=DELETE">
-    <input 
-        type="hidden" 
-        name="id" 
-        value={{ chef.id }}
-    >
-</form>
-
-<script src="/scripts.js"></script>
-
+        <form id="form-delete" action="/admin/chefs?_method=DELETE" method="POST">
+            <div class="total-recipes" data-total={{chef.total_recipes}}></div>
+            <input type="hidden" name="id" value={{chef.id}}>
+            <input type="hidden" name="file_id" value="{{chef.file.id}}">
+        </form>
+    </section>
 {% endblock %}

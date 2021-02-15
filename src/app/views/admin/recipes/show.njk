@@ -1,72 +1,11 @@
-{% extends "layout.njk" %}
+{% extends 'parts/admin.njk' %}
+{% import "parts/recipe-content.njk" as recipeContent %}
 
 {% block head %}
-
-    <title>{{recipe.title}}</title>
-
+    <link rel="stylesheet" href="/styles/recipe-index.css">
+    <title>Receita: {{recipe.title}} | Foodfy</title>
 {% endblock %}
 
-{% block recipeShow %}
-
-    <section class="recipes__detail-section container">
-        <div class="header_create">
-            <h1>Receita: {{recipe.title}}</h1>
-            <a href="/admin/recipes/{{recipe.id}}/edit">Editar receita</a>
-        </div>
-
-        <div class="banner__image-container">
-            <img src="{{recipe.image}}" alt="{{recipe.title}}">
-        </div>
-
-        <div class="recipe-info">
-            <h1>{{recipe.title}}</h1>
-            <p>Por {{recipe.chef_name}}</p>
-        </div>
-
-        <div id="ingredients-section">
-            <div class="section-title">
-                <h3>Ingredientes</h3>                
-            </div>
-            <div class="details">
-                <ul>
-                    {% for ingredients in recipe.ingredients %}
-                        <li>
-                            {{ingredients}}
-                        </li>
-                        {% endfor%}
-                    </ul>
-                </div>
-            </div>
-
-            <div id="preparation-section">
-                <div class="section-title">
-                    <h3>Modo de preparo</h3>                    
-                </div>
-                <div class="details">
-                    <ul>
-                        {% for ingredients in recipe.preparation %}
-                            <li>
-                                {{ingredients}}
-                            </li>
-                            {% endfor%}
-                        </ul>
-                    </div>
-                </div>
-
-                {% if recipe.information != '' %}
-                    <div id="information-section">
-                        <div class="section-title">
-                            <h3>Informações Adicionais</h3>                            
-                        </div>
-                        <div class="details">
-                            <p>{{recipe.information | striptags(true) | escape | nl2br}}</p>
-                        </div>
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-    </section>
-
-    <script src="/scripts.js"></script>
-
+{% block content %}
+    {{ recipeContent.render(recipe, "", session, "admin") }}
 {% endblock %}
