@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-👨‍🍳  FoodFy - Site de Receitas - Em Construção 👨‍🍳 <br>
+👨‍🍳  FoodFy - Site de Receitas 👨‍🍳 <br>
 </h1>
 <h3 align="center"> É um site de que fornece as melhores receitas criado a partir de um exercício disponibilizado durante o Bootcamp LaunchBase da RocketSeat. </h3>
 
@@ -22,21 +22,15 @@ Como usuário, deve-se conseguir procurar receitas;
 Como usuário, deve-se visualizar o resumo das receitas mais acessadas;
 Como usuário, deve-se visualizar a receita completa em uma nova página.
 
-:heavy_check_mark: <h2>Front End </h2> 
-
-- 1º Criação da Página Home
-- 2º Criação da Página Sobre
-- 3º Criação da Página Receitas
-- 4º Criação do Modal das Receitas
-
-:heavy_check_mark: <h2>Back End </h2>
-
-- 1º Criação do Servidor
-- 2º Criação de Dados Dinâmicos
-- 3º Importação e Exportação de Dados com JavaScript
-- 4º Refatoração de Códigos
-- 5º Passando dados do Front End para o Back End com Query Strings
-- 6º Redirecionando URL com JavaScript
+<h2>Desafios realizados:heavy_check_mark:</h2>
+1. Construção do Foodfy - Construção de um site completo para uma empresa de receitas chamada Foodfy;
+2. Refatoração do Foodfy - Criação do primeiro servidor, Utilização do template engine Nunjucks para utilização de dados dinâmicos, Criação da página de descrição e Refatoração completa;
+3. Administração do Foodfy - Criação de uma área administrativa para o Foodfy;
+4. Persistência de dados do Foodfy - Criação de um banco de dados para o Foodfy, criação de novas páginas de cadastro, listagem e edição de chefs, Criação do search bar para busca de receitas e adição da funcionalidade de paginação das páginas de receitas e chefs;
+5. Upload de Imagens - Criação de um sistema de envio de imagens;
+6. Apresentação e Organização das Receitas Foodfy - Implementação de melhorias na listagem das receitas;
+7. Sistema de Login Foodfy - Implementação dos conceitos de cadastro e sessão de usuários com autenticação de usuários no Foodfy;
+8. Implementação de melhorias e refatoração do Foodfy - Criação de um model base.js para servir como base para os outros models, Criação de seeds para popular os dados das tabelas, Criação de validação, com retorno visual para o usuário, de todos os campos preenchidos.
 
 <a id="tecnologias-utilizadas"></a>
 
